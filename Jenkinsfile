@@ -1,9 +1,9 @@
 pipeline{
 agent any
   environment{
-    Image_Repo="chirag0401"
+    //Image_Repo="chirag0401"
     Branch="master"
-    Docker_Cred=credentials('dockerhub')
+    //Docker_Cred=credentials('dockerhub')
     //Github_Cred=credentials('github')
   }
 stages{
@@ -14,9 +14,9 @@ stages{
           echo "take code from github"
           git branch: 'master',
                 credentialsId: 'github',
-                url: 'https://github.com/Chirag0401/sentiment.git'
+                url: 'https://github.com/Chirag0401/sentiment-app.git'
            //sh  '''
-             // git clone -b $Branch https://github.com/Chirag0401/sentiment.git
+             // git clone -b $Branch https://github.com/Chirag0401/sentiment-app.git
              //'''
              echo "Branch copied"
         }
