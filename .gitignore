@@ -5,11 +5,6 @@ node_modules/
 # SA Logic ignored files
 venv/
 
-# SA WebApp ignored files
-target/
-.mvn/
-!**/maven-wrapper.jar
-
 # IDE ignored files
 .idea/
 *.iml

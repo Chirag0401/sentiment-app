@@ -1,0 +1,4 @@
+/home/ubuntu/sentiment-application/sa-webapp/src/main/java/com/sa/web/SentimentController.java
+/home/ubuntu/sentiment-application/sa-webapp/src/main/java/com/sa/web/dto/SentenceDto.java
+/home/ubuntu/sentiment-application/sa-webapp/src/main/java/com/sa/web/SentimentAnalysisWebApp.java
+/home/ubuntu/sentiment-application/sa-webapp/src/main/java/com/sa/web/dto/SentimentDto.java
