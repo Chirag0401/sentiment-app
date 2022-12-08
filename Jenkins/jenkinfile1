@@ -1,0 +1,42 @@
+pipeline {
+    agent {
+      label 'slave2'
+    }
+
+    stages {
+        stage('Go to repo'){
+    steps{
+        script{
+          echo "take code from github"
+           sh  '''
+              rm -rf sentiment-app/
+              git clone $Branch https://github.com/Chirag0401/sentiment-app.git
+             '''
+             echo "Branch copied"
+        }
+    }
+  }
+  stage('Docker Version'){
+    steps{
+      sh 'docker --version'
+    }
+    }
+   stage('Build Image and push to dockerhub'){
+      
+    steps{
+        script{
+          echo "Test code from github"
+          sh  ''' 
+          echo "encoded password"| docker login --username chirag0401 --password-stdin
+          pwd
+          ls
+          cd sentiment-app/sa-frontend/
+          docker build -t frontapp .
+          docker tag frontapp chirag0401/frontapp:latest-${BUILD_NUMBER}
+          docker push chirag0401/frontapp:latest-${BUILD_NUMBER}
+          '''
+        }
+    }
+}
+}
+}
